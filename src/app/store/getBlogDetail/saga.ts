@@ -3,11 +3,12 @@ import { call, put, takeLatest } from 'redux-saga/effects';
 import {Cookies} from 'react-cookie';
 import axios from "axios";
 import {GET_BLOG_DETAIL_LOADING, getBlogDetailSuccess} from "@/app/store/getBlogDetail/action";
+import axiosInterceptorInstance from "@/app/store/axios";
 
 
 function* ApiCall(action: any): Generator<any> {
   try {
-    const response: any = yield call(axios.get,
+    const response: any = yield call(axiosInterceptorInstance.get,
       `${process.env.NEXT_PUBLIC_BASE_URL}/posts/${action.id}`,
       );
     yield put((getBlogDetailSuccess(response.data)));
