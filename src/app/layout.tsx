@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import ClientWrapper from "@/app/clientWrapper";
+import ReduxProvider from "@/app/reduxProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -25,9 +26,11 @@ export default function RootLayout({
     </head>
 
       <body className={inter.className}>
-        <ClientWrapper>
-          {children}
-        </ClientWrapper>
+        <ReduxProvider>
+          <ClientWrapper>
+            {children}
+          </ClientWrapper>
+        </ReduxProvider>
       </body>
     </html>
   );
