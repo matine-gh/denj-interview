@@ -1,34 +1,46 @@
 'use client'
-import {Button} from "@/app/components/common/Button";
 import {useDispatch, useSelector} from "react-redux";
-import {useEffect} from "react";
+import {Fragment, useEffect, useState} from "react";
 import {getBlogsLoading} from "@/app/store/getBlogs/action";
-import {getBlogDetailLoading} from "@/app/store/getBlogDetail/action";
-export default function Blogs() {
+import {BlogInterface} from "@/app/interfaces/blog.interface";
+import BlogCard from "@/app/components/Blogs/BlogCard";
+import {useStyles} from "@/app/styles";
+export default function Blogs({...props}) {
     const dispatch = useDispatch();
     const blogsStates = useSelector((state: any) => state.getBlogs)
-    const selectedBlog = useSelector((state: any) => state.getBlogDetail)
+
+    const [blogsList, setBlogsList] = useState<BlogInterface[]>([])
+
+
+    const classes = useStyles({...props})
+
+
+    const body = {
+        title: 'aaa',
+        body: 'mmmmmmmmmmmmmm'
+    }
 
     useEffect(() => {
-        // dispatch(getBlogsLoading())
-        dispatch(getBlogDetailLoading(3))
+        dispatch(getBlogsLoading())
     }, []);
 
-    // useEffect(() => {
-    //     console.log('states', blogsStates)
-    // }, [blogsStates]);
-
-
     useEffect(() => {
-        console.log('selectedBlog', selectedBlog)
-    }, [selectedBlog]);
+        if (blogsStates.isDone) {
+            setBlogsList(blogsStates.response)
+        }
+    }, [blogsStates]);
 
 
 
     return (
-        <div>
-            Blogs
-            {/*<Button>my button</Button>*/}
+        <div className={classes.blogsList}>
+            {blogsList.map((blog) => {
+                return (
+                <Fragment key={blog.id}>
+                    <BlogCard {...blog} />
+                </Fragment>
+            )
+            })}
         </div>
     )
 }
