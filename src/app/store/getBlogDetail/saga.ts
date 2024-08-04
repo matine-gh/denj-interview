@@ -1,7 +1,5 @@
 
 import { call, put, takeLatest } from 'redux-saga/effects';
-import {Cookies} from 'react-cookie';
-import axios from "axios";
 import {GET_BLOG_DETAIL_LOADING, getBlogDetailSuccess} from "@/app/store/getBlogDetail/action";
 import axiosInterceptorInstance from "@/app/store/axios";
 
