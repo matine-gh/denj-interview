@@ -23,7 +23,6 @@ export default function RootLayout({
       <meta name="theme-color" content="#000000"/>
       <meta httpEquiv="X-UA-Compatible" content="ie=edge"/>
       <link rel="icon" href="/favicon.ico"/>
-      <link rel="manifest" href="/manifest.webmanifest"/>
     </head>
 
       <body className={inter.className}>
