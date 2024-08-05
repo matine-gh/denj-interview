@@ -31,6 +31,12 @@ export const useStyles = createUseStyles((theme) => ({
         gridTemplateColumns: 'repeat(auto-fill, minmax(480px, 1fr))',
         gridGap: '100px',
     },
+    blogPage: {
+        border: `solid ${theme.colors.secondary.DEFAULT}`,
+        borderRadius: theme.borderRadius.xl,
+        padding: 16,
+        minHeight: "80vh"
+    },
     header: {
         margin: 12,
         display: "flex",
