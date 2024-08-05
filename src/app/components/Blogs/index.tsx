@@ -14,12 +14,6 @@ export default function Blogs({...props}) {
 
     const classes = useStyles({...props})
 
-
-    const body = {
-        title: 'aaa',
-        body: 'mmmmmmmmmmmmmm'
-    }
-
     useEffect(() => {
         dispatch(getBlogsLoading())
     }, []);
