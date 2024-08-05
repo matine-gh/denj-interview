@@ -7,7 +7,7 @@ export default function BlogCard({...blog}: BlogInterface) {
         <div className={classes.blogCard}>
             <h1>{blog.title}</h1>
             <p>{blog.body}</p>
-            <a href={`/${blog.id}`}>Read more</a>
+            <a href={`/${blog.id}`} onClick={()=>localStorage.setItem('title', blog.title)}>Read more</a>
         </div>
     )
 }
