@@ -1,4 +1,3 @@
-
 import BlogPost from "@/app/components/BlogPost";
 import type { Metadata } from 'next'
 
@@ -8,16 +7,13 @@ type Props = {
 }
 
 export async function generateMetadata({params}: Props): Promise<Metadata> {
-    // read route params
     const id = params.id
 
-    // fetch data
-    // const product = await fetch(`https://.../${id}`).then((res) => res.json())
+    const product = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`).then((res) => res.json())
 
 
     return {
-        // title: product.title,
-        title: id,
+        title: product.title,
     }
 }
 
