@@ -12,22 +12,25 @@ export const useStyles = createUseStyles((theme) => ({
         }
     },
     blogCard: {
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "space-between",
         backgroundColor: theme.colors.secondary["02"],
+        height: 200,
         border: `${theme.colors.secondary.DEFAULT} solid`,
         borderRadius: theme.borderRadius.xl,
         padding: 16,
-        // whiteSpace: 'nowrap',
-        // overflow: 'hidden',
-        // textOverflow: 'ellipsis',
-        // display: 'block',
+        '& p': {
+            textDecoration: 'none',
+            overflow: 'hidden',
+            whiteSpace: 'nowrap',
+            textOverflow: 'ellipsis',
+        },
         '& h1': {
             fontSize: '24px'
         }
     },
     blogsList: {
-        // backgroundColor: theme.colors.secondary["02"],
-        // border: `${theme.colors.secondary.DEFAULT} solid`,
-        // borderRadius: theme.borderRadius.xl,
         display: "grid",
         gridTemplateColumns: 'repeat(auto-fill, minmax(480px, 1fr))',
         gridGap: '100px',
@@ -49,7 +52,10 @@ export const useStyles = createUseStyles((theme) => ({
         justifyContent: "space-between"
     },
     label: {
-        display: "block"
+        display: "block",
+        fontSize: 14,
+        marginLeft: 8,
+        marginBottom: 6
     }
 }))
 
