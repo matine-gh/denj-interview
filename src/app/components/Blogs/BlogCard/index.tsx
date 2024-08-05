@@ -7,7 +7,7 @@ export default function BlogCard({...blog}: BlogInterface) {
         <div className={classes.blogCard}>
             <h1>{blog.title}</h1>
             <p>{blog.body}</p>
-            <a href={'/ddd'}>Read more</a>
+            <a href={`/${blog.id}`}>Read more</a>
         </div>
     )
 }
