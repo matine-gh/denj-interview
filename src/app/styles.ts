@@ -45,6 +45,7 @@ export const useStyles = createUseStyles((theme: any) => ({
         padding: 8,
         marginBottom: 16,
         borderRadius: theme.borderRadius.lg,
+        maxWidth: '95%'
     },
     header: {
         margin: 12,
