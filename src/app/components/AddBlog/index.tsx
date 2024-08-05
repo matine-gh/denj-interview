@@ -2,7 +2,7 @@
 import {useEffect, useState} from "react";
 import {Button} from "@/app/components/common/Button";
 import {useDispatch, useSelector} from "react-redux";
-import {postBlogLoading} from "@/app/store/postBlog/actions";
+import {postBlogFailure, postBlogLoading} from "@/app/store/postBlog/actions";
 import {useRouter} from "next/navigation";
 import {useStyles} from "@/app/styles";
 
@@ -20,6 +20,8 @@ export default function AddBlog({...props}) {
         if (postBlogStates.isDone) {
             alert('new blog added successfully');
             router.push('/')
+            router.refresh()
+            dispatch(postBlogFailure())
 
         }
     }, [postBlogStates.isDone]);
