@@ -1,4 +1,4 @@
-import { LoginInterface } from '@/app/store/login/form/login.interface';
+import { LoginInterface } from '@/app/store/login/login.interface';
 
 export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
 export const LOGIN_FAILURE = 'LOGIN_FAILURE';

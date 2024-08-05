@@ -9,7 +9,7 @@ export default function BlogPost({ params ,...props}: { params: { id: number } }
 
     const dispatch = useDispatch();
     const selectedBlog = useSelector((state: any) => state.getBlogDetail)
-    const [blogData, setBlogData] = useState<BlogInterface>(null)
+    const [blogData, setBlogData] = useState<BlogInterface| null>(null)
 
     const classes = useStyles({...props})
 

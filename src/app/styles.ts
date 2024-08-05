@@ -1,6 +1,6 @@
 import {createUseStyles} from 'react-jss'
 
-export const useStyles = createUseStyles((theme) => ({
+export const useStyles = createUseStyles((theme: any) => ({
     button: {
         background: theme.colors.primary["10"],
         borderRadius: theme.borderRadius.lg,

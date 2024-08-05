@@ -21,7 +21,7 @@ export async function generateMetadata({params}: Props): Promise<Metadata> {
     }
 }
 
-export default function Page({ params }: { params: { id: string } }) {
+export default function Page({ params }: { params: { id:  number } }) {
 
     return (
         <BlogPost params={params} />

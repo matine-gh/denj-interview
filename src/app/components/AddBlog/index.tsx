@@ -41,8 +41,8 @@ export default function AddBlog({...props}) {
             <textarea id="w3review"
                       className={classes.input}
                       value={body}
-                      rows="20"
-                      cols="100"
+                      rows={20}
+                      cols={100}
                       onChange={(event)=>setBody(event.target.value)}/>
             <Button onClick={sendData}>Send</Button>
         </div>
