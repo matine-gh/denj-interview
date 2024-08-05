@@ -6,6 +6,7 @@ export const useStyles = createUseStyles((theme) => ({
         borderRadius: theme.borderRadius.lg,
         border: "none",
         padding: 12,
+        display: "block",
         '&:hover': {
             backgroundColor: theme.colors.primary.DEFAULT,
         }
@@ -35,7 +36,12 @@ export const useStyles = createUseStyles((theme) => ({
         border: `solid ${theme.colors.secondary.DEFAULT}`,
         borderRadius: theme.borderRadius.xl,
         padding: 16,
-        minHeight: "80vh"
+        minHeight: "80vh",
+    },
+    input: {
+        padding: 8,
+        marginBottom: 16,
+        borderRadius: theme.borderRadius.lg,
     },
     header: {
         margin: 12,

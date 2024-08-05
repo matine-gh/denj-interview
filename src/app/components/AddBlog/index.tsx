@@ -33,18 +33,17 @@ export default function AddBlog({...props}) {
 
 
     return(
-        <div>
-            <div>
-                <label className={classes.label}>title</label>
-                <input value={title}
-                       onChange={(event)=>setTitle(event.target.value)}/>
-            </div>
-            <div>
-                <label className={classes.label}>body</label>
-                <textarea id="w3review" name="w3review" rows="4" cols="50" onChange={(event)=>setBody(event.target.value)}>
-                    {body}
-                </textarea>
-            </div>
+        <div className={classes.blogPage}>
+            <label className={classes.label}>title</label>
+            <input value={title} className={classes.input}
+                   onChange={(event)=>setTitle(event.target.value)}/>
+            <label className={classes.label}>body</label>
+            <textarea id="w3review"
+                      className={classes.input}
+                      value={body}
+                      rows="20"
+                      cols="100"
+                      onChange={(event)=>setBody(event.target.value)}/>
             <Button onClick={sendData}>Send</Button>
         </div>
     )
